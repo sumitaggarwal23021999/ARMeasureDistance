@@ -46,11 +46,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Set the view's delegate
+        let scene = SCNScene()
         sceneView.delegate = self
         sceneView.showsStatistics = true
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         sceneView.automaticallyUpdatesLighting = true
-        let scene = SCNScene()
+        sceneView.scene = scene
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
         sceneView.addGestureRecognizer(gestureRecognizer)
     }
